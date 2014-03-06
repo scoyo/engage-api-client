@@ -11,6 +11,7 @@ import org.apache.commons.logging.LogFactory;
 
 import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
 
+
 public abstract class ApiClient<REQUEST extends ApiRequest> {
 
     private Log log = LogFactory.getLog(this.getClass());
