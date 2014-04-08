@@ -4,19 +4,20 @@ import com.silverpop.api.client.ApiResult;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XStreamAlias("RESULT")
-public class AddRecipientResult implements ApiResult{
+public class AddRecipientResult implements ApiResult {
 
 	@XStreamAlias("RecipientId")
-	private Long recipientId;
+	private String recipientId;
 
 	@XStreamAlias("SUCCESS")
 	private boolean success;
 
-	public Long getRecipientId() {
+	public String getRecipientId() {
 		return recipientId;
 	}
 
 	public boolean getSuccess() {
 		return success;
 	}
+
 }
