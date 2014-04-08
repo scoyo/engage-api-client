@@ -7,12 +7,12 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class AddRecipientResult implements ApiResult{
 
 	@XStreamAlias("RecipientId")
-	private Integer recipientId;
+	private Long recipientId;
 
 	@XStreamAlias("SUCCESS")
 	private boolean success;
 
-	public Integer getRecipientId() {
+	public Long getRecipientId() {
 		return recipientId;
 	}
 
