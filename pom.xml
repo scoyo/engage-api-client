@@ -24,7 +24,7 @@
   <groupId>silverpop</groupId>
   <artifactId>spapi-client</artifactId>
   <packaging>jar</packaging>
-  <version>1.0.3.SCOYO</version>
+  <version>1.0.4.SCOYO-SNAPSHOT</version>
   <dependencies>
     <dependency>
       <groupId>com.thoughtworks.xstream</groupId>
