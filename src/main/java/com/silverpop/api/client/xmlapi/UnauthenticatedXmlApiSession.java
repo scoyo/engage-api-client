@@ -1,10 +1,12 @@
 package com.silverpop.api.client.xmlapi;
 
 
+import com.silverpop.api.client.command.LoginCommand;
+
 public class UnauthenticatedXmlApiSession extends XmlApiSession {
 
 	public UnauthenticatedXmlApiSession(String url) {
-		super(url, null, null, false);
+		super(url, new LoginCommand());
 	}
 
 	@Override
@@ -18,6 +20,11 @@ public class UnauthenticatedXmlApiSession extends XmlApiSession {
 
 	@Override
 	public void open() {
-		
+
 	}
+
+    @Override
+    public boolean isReAuthenticate() {
+        return false;
+    }
 }
