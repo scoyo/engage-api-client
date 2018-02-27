@@ -50,7 +50,7 @@ public class ApiClientTest {
 	@Test
 	public void testExecuteCommandWhenSessionIsOpenAndResponseIsSuccessful() throws ApiResultException, HttpException, IOException {
 		when(session.isOpen()).thenReturn(OPEN);
-		when(commandProcessor.prepareRequest(apiCommand, session)).thenReturn(apiRequest);
+		when(commandProcessor.prepareRequest(apiCommand)).thenReturn(apiRequest);
 		when(commandProcessor.prepareMethod(URL, apiRequest)).thenReturn(httpMethodBase);
 		when(httpClient.executeMethod(httpMethodBase)).then(new Answer<Integer>() {
 			@Override
@@ -70,7 +70,7 @@ public class ApiClientTest {
 	@Test
 	public void testExecuteCommandWhenSessionIsOpenAndResponseIsFailure() throws HttpException, IOException {
 		when(session.isOpen()).thenReturn(OPEN);
-		when(commandProcessor.prepareRequest(apiCommand, session)).thenReturn(apiRequest);
+		when(commandProcessor.prepareRequest(apiCommand)).thenReturn(apiRequest);
 		when(commandProcessor.prepareMethod(URL, apiRequest)).thenReturn(httpMethodBase);
 		when(httpClient.executeMethod(httpMethodBase)).then(new Answer<Integer>() {
 			@Override
@@ -90,9 +90,7 @@ public class ApiClientTest {
 		} catch(ApiResultException e) {
 			assertEquals(e.getErrorResult(), apiErrorResult);
 			assertEquals(e.getMessage(), "API call '" + apiCommand.getClass().getName() + "' unsuccessful.");
-		} catch(Exception e) {
-			fail("Expected ApiResultException, but got " + e);
 		}
 	}
-	
+
 }
